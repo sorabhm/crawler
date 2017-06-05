@@ -1,4 +1,4 @@
-![logo](https://github.com/sorabhm/crawler/master/logo.jpg)
+![logo](https://github.com/sorabhm/crawler/blob/master/logo.jpg)
 
 [![Build Status](https://travis-ci.org/sorabhm/crawler.svg?branch=master)](https://travis-ci.org/sorabhm/crawler)
 
