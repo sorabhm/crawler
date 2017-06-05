@@ -1,13 +1,13 @@
-![logo](https://github.com/sorabhm/crawler/blob/master/logo.jpg)
+![logo](https://github.com/sorabhm/crawler/master/logo.jpg)
 
 [![Build Status](https://travis-ci.org/sorabhm/crawler.svg?branch=master)](https://travis-ci.org/sorabhm/crawler)
 
-#SpideyTheCrawler with Fork/Join
+## SpideyTheCrawler with Fork/Join
 
 A simple crawler based on Fork/Join framework. With the given parameters it parses through the website and pulls out list of Unique URLs accessed (all urls will be of the same domain), list of URLs to external websites which are ignored, and the list of images found while parsing the pages. 
 It uses JSoup framework to connect and parses a web page. 
 
-##Pre-requisites
+## Pre-requisites
 * You must have Maven and Java 8 installed on your system to build and execute this application
 * You must also be able to work with [GitHub](https://help.github.com/articles/set-up-git) repositories.
 
@@ -22,11 +22,8 @@ It uses JSoup framework to connect and parses a web page.
 
 The main file is [Application.java](https://github.com/sorabhm/crawler/blob/master/src/main/java/com/crawler/core/Application.java)
 
-##Eclipse Instructions
+## Eclipse Instructions
 --------------------
-
-* **Prerequisites:**
-    * Install [Eclipse](http://www.eclipse.org/downloads/), the [Maven plugin](http://eclipse.org/m2e/), and optionally the [GitHub plugin](http://eclipse.github.com/).
 
 * Set up workspace
 * Import the project from the checkout location
