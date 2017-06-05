@@ -1,1 +1,7 @@
 /target/
+/log4j-application.log
+/log4j-application.log.1
+/log4j-application.log.2
+/log4j-application.log.3
+/log4j-application.log.4
+/output_2017-06-05.txt
