@@ -1,1 +1,8 @@
 language: java
+script: mvn install
+sudo: false
+
+jdk:
+    - oraclejdk8
+notifications:
+  email: false
