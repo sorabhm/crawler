@@ -13,8 +13,8 @@ public class Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String startingURL = "http://wiprodigital.com/";
-		int maxThreads = 20;
+		String startingURL = "http://google.com/";
+		int maxThreads = 200;
 		if(null!=args && args.length>0) {
 			if(null!=args[0] && !"".equals(args[0].trim())) {
 				startingURL = args[0];
@@ -27,14 +27,19 @@ public class Application {
 		
 		ForkJoinPool pool = new ForkJoinPool(maxThreads);
 		CustomFileWriter writer = new CustomFileWriter();
-		
-		SpideyTheCrawler crawler = new SpideyTheCrawler(pool, startingURL, writer);
 		try {
+			SpideyTheCrawler crawler = new SpideyTheCrawler(pool, startingURL, writer);
 			crawler.setHostName(URLFormatter.getHostName(startingURL));
+			crawler.invokeCrawler();
 		} catch (MalformedURLException e) {
 			logger.error("Malformed URL exception = ", e);
+		} finally {
+			if(!pool.isTerminated()) {
+				logger.debug("Shutting down the pool");
+				pool.shutdown();
+			}
 		}
-		crawler.invokeCrawler();
+		
 		logger.debug("Completed the crawling for URL = " + startingURL);
 	}
 }
