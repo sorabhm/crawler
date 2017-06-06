@@ -19,12 +19,13 @@
 		<!-- Coverage -->
 		<surefire.version>2.17</surefire.version>
 		<jacoco.version>0.7.2.201409121644</jacoco.version>
+
 		<!-- Logging -->
 		<log4j.version>1.2.16</log4j.version>
 		
 		<!-- Others -->
 		<jsoup.version>1.10.2</jsoup.version>
-		<codehaus-exec-maven-plugin>1.6.0</codehaus-exec-maven-plugin>
+    <codehaus-exec-maven-plugin>1.6.0</codehaus-exec-maven-plugin>
 
 	</properties>
 	<dependencies>
@@ -37,7 +38,9 @@
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
+
 			<version>${jsoup.version}</version>
+
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
