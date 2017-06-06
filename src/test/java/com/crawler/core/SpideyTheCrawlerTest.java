@@ -2,7 +2,9 @@ package com.crawler.core;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Matchers.anySet;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -13,6 +15,12 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
+/**
+ * Test class for the primary class SpideyTheCrawler
+ * 
+ * @author smend1
+ *
+ */
 public class SpideyTheCrawlerTest {
 	@Mock
 	private ForkJoinPool pool;
@@ -57,9 +65,10 @@ public class SpideyTheCrawlerTest {
 	@Test
 	public void testInvokeCrawler() {
 		crawler.invokeCrawler();
-		when(writer.writeDataToFile(crawler.getListOfTraversedUrls(), "Unique URLs accessed by the application\n")).thenReturn(true);
-		verify(writer,atLeastOnce()).writeDataToFile(crawler.getListOfTraversedUrls(), "Unique URLs accessed by the application\n");
-		assertTrue(writer.writeDataToFile(crawler.getListOfTraversedUrls(), "Unique URLs accessed by the application\n"));
+		
+		verify(writer,times(3)).writeDataToFile(anySet(), anyString());
+		when(writer.writeDataToFile(anySet(), anyString())).thenReturn(true);
+		assertTrue(writer.writeDataToFile(anySet(), anyString()));
 	}
 	
 }
