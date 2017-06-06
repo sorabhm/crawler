@@ -11,12 +11,25 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
+/**
+ * A helper class to write down the list of URLs into a separate file
+ * 
+ * @author smend1
+ *
+ */
 public class CustomFileWriter {
 	
 	public static final Logger logger = Logger.getLogger(CustomFileWriter.class);
 	
 	public static final String ERR_MSG = "CustomFileWriter::IOException thrown while writing to file : ";
 
+	/**
+	 * Main method which generates the output file using the data
+	 * 
+	 * @param listOfUrls
+	 * @param message
+	 * @return
+	 */
 	public boolean writeDataToFile(Set<String> listOfUrls, String message) {
 		boolean success  = true;
 		
@@ -39,6 +52,11 @@ public class CustomFileWriter {
 		return success;
 	}
 
+	/**
+	 * Helper method to rename the output file and append current date to the same
+	 * 
+	 * @return
+	 */
 	public boolean moveGeneratedFile() {
 		boolean fileMoveSuccess = true;
 		try {

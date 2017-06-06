@@ -12,6 +12,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.log4j.Logger;
 
 /**
+ * This class is used to initialize the ForkJoinPool and trigger the initial recursive task. 
+ * Given there was no specific returning data hence RecursiveAction class has been overridden. 
+ * Once the data (URLs of Pages traversed, External links, and Image urls) is populated in the synchronized Sets
+ * then it is written to a text file created with in the workspace itself with the name output_<CURRENT_DATE>
+ * 
  * @author smend1
  *
  */
@@ -37,12 +42,24 @@ public class SpideyTheCrawler {
 	
 	private final static Logger logger = Logger.getLogger(SpideyTheCrawler.class);
 	
+	/**
+	 * Main constructor for the class
+	 * 
+	 * @param pool ForkJoinPool instance instantiated by the called
+	 * @param url Starting URL
+	 * @param writer Custom File writer to generate the output in required format
+	 * 
+	 */
 	public SpideyTheCrawler(ForkJoinPool pool, String url, CustomFileWriter writer) {
 		this.startingURL = url;
 		forkJoinPool = pool;
 		this.writer = writer;
 	}
 	
+	/**
+	 * Invoker of the subtasks using ForkJoinPool. Rest is managed by the subclass of RecursiveAction.
+	 * Once processing is done the data is dumped into a text file.
+	 */
 	public void invokeCrawler() {
 		logger.debug("Invoking the crawler for URL => " + startingURL);
 		boolean success = true;
