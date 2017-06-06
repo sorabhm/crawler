@@ -40,9 +40,6 @@ The main file is [Application.java](https://github.com/sorabhm/crawler/blob/mast
 	
 #What's In Progress
 --------------------
-* Javadoc
 * Unit test cases for Static components using PowerMock and testing Exception cases
-* Performance data matrix during and after the run to check how much time and memory application has consumed during the run
-* Ability to terminate the application after a specific threshold e.g. Maximum Depth or Max number of URLs accessed
 * Log files archival process
 * Better formatting of the output file
