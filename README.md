@@ -43,3 +43,10 @@ The main file is [Application.java](https://github.com/sorabhm/crawler/blob/mast
 * Unit test cases for Static components using PowerMock and testing Exception cases
 * Log files archival process
 * Better formatting of the output file
+
+#What more could have been achieved with time and resources
+--------------------
+* Deployment of the program on AWS EC2 with some scheduled process
+* Parse the document data available on the pages and index it in some NoSQL DBs to be used further on some site rather than collating links only
+* Could have explored Neo4J to build and show up relation between different pages
+* Explore the distributed angle and make relevant changes to move the same to Apache Spark/Hadoop
