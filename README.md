@@ -38,13 +38,13 @@ The main file is [Application.java](https://github.com/sorabhm/crawler/blob/mast
 	* In the "Goals:" field add `exec:java -Dexec.args="http://wiprodigital.com/ 4"`
 	* Click on "Apply" and then "Run"
 	
-#What's In Progress
+## What's In Progress
 --------------------
 * Unit test cases for Static components using PowerMock and testing Exception cases
 * Log files archival process
 * Better formatting of the output file
 
-#What more could have been achieved with time and resources
+## What more could have been achieved with time and resources
 --------------------
 * Deployment of the program on AWS EC2 with some scheduled process
 * Parse the document data available on the pages and index it in some NoSQL DBs to be used further on some site rather than collating links only
